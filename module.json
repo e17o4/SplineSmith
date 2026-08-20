@@ -1,0 +1,26 @@
+{
+  "id": "splinesmith",
+  "title": "SplineSmith",
+  "description": "A lightweight textured spline/path editor for Foundry VTT. Draw smooth editable paths with repeating textures directly on a Scene.",
+  "version": "0.1.0",
+  "type": "module",
+  "authors": [
+    {
+      "name": "Beta ki + ChatGPT"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.365",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/splinesmith.js"
+  ],
+  "styles": [
+    "styles/splinesmith.css"
+  ],
+  "socket": false,
+  "readme": "README.md",
+  "license": "LICENSE"
+}

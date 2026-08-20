@@ -1,0 +1,119 @@
+#splinesmith-panel {
+  position: fixed;
+  left: 92px;
+  top: 92px;
+  width: 320px;
+  z-index: 10000;
+  color: var(--color-text-light-highlight, #f0f0e0);
+  background: rgba(20, 20, 24, 0.96);
+  border: 1px solid var(--color-border-dark, #111);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
+  font-family: var(--font-primary, sans-serif);
+  overflow: hidden;
+}
+
+#splinesmith-panel .ss-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: move;
+  user-select: none;
+}
+
+#splinesmith-panel .ss-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+#splinesmith-panel .ss-close {
+  width: 26px;
+  height: 26px;
+  min-height: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+#splinesmith-panel .ss-body {
+  display: grid;
+  gap: 9px;
+  padding: 10px;
+}
+
+#splinesmith-panel .ss-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+#splinesmith-panel .ss-texture-row {
+  grid-template-columns: 90px 1fr auto;
+}
+
+#splinesmith-panel label {
+  font-size: 12px;
+  opacity: 0.92;
+}
+
+#splinesmith-panel input[type="text"],
+#splinesmith-panel input[type="number"] {
+  min-width: 0;
+  width: 100%;
+  height: 28px;
+  box-sizing: border-box;
+}
+
+#splinesmith-panel input[type="range"] {
+  width: 100%;
+}
+
+#splinesmith-panel .ss-range-wrap {
+  display: grid;
+  grid-template-columns: 1fr 64px;
+  gap: 6px;
+  align-items: center;
+}
+
+#splinesmith-panel .ss-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+#splinesmith-panel .ss-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+#splinesmith-panel button {
+  min-height: 30px;
+}
+
+#splinesmith-panel .ss-danger {
+  border-color: rgba(200, 70, 70, 0.75);
+}
+
+#splinesmith-panel .ss-status {
+  min-height: 34px;
+  padding: 7px 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.055);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+#splinesmith-panel .ss-hint {
+  font-size: 11px;
+  opacity: 0.72;
+  line-height: 1.35;
+}
+
+#splinesmith-panel .ss-hidden {
+  display: none !important;
+}
