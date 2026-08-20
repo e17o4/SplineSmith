@@ -70,6 +70,11 @@ Transparent PNG/WebP works well. Power-of-two dimensions are safest for repeatin
 
 Open Foundry's developer console with **F12** and search for `SplineSmith`.
 
+## Disclaimer
+Why yes i did have chat gpt make this for me. why? cause Im already learning C, C++, C#, and dont wanna forking learn javascript and CSS on top of that for a tiny tool i wanted for my own personal convenience when i DM a game that needs a spline on the damn map. no one else made it. so i asked gpt nicely to make it. keep your anti AI hate to yourself please. i know. and i dont care. go talk to gpt about it.
+SPEAKING OF TOOLS
+if you can make something better then BY ALL MEANS PLEASE FORK THIS AND DO BETTER! and let me know! i wanna see. 
+
 If the toolbar appears but textures do not render, confirm the image can be displayed normally as a Foundry Tile and try a power-of-two image such as 512x128.
 
 If you encounter an error, copy the red console error and its stack trace. The module logs with the prefix `SplineSmith |`.
