@@ -22,5 +22,8 @@
   ],
   "socket": false,
   "readme": "README.md",
-  "license": "LICENSE"
+  "license": "LICENSE",
+  "url": "https://github.com/e17o4/SplineSmith",
+  "manifest": "https://raw.githubusercontent.com/e17o4/SplineSmith/main/module.json",
+  "download": "https://github.com/e17o4/SplineSmith/releases/download/v0.1.0/SplineSmith-v0.1.0.zip"
 }
