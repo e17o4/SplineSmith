@@ -117,3 +117,12 @@
 #splinesmith-panel .ss-hidden {
   display: none !important;
 }
+
+/* Test channel: player visibility control */
+#splinesmith-panel .ss-visibility {
+  grid-column: 1 / -1;
+}
+
+#splinesmith-panel .ss-visibility.ss-player-hidden {
+  border-color: rgba(230, 170, 55, 0.85);
+}
