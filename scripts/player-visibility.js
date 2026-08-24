@@ -1,13 +1,13 @@
 const SS_VISIBILITY_VERSION = "0.1.1-test.1";
 
 function installPlayerVisibility() {
-  const engine = globalThis.SplineSmith?.engine;
+  const engine = globalThis.SplineSmithTest?.engine;
   if (!engine) {
-    console.error("SplineSmith | Player visibility patch could not find the SplineSmith engine.");
+    console.error("SplineSmith Test | Player visibility patch could not find the test engine.");
     return;
   }
 
-  globalThis.SplineSmith.version = SS_VISIBILITY_VERSION;
+  globalThis.SplineSmithTest.version = SS_VISIBILITY_VERSION;
 
   const originalCreateRopeMesh = engine.createRopeMesh.bind(engine);
   engine.createRopeMesh = async function(path) {
@@ -18,7 +18,7 @@ function installPlayerVisibility() {
   engine.togglePlayerVisibility = async function() {
     const path = this.selectedPath;
     if (!path) {
-      ui.notifications.warn("SplineSmith: select a path first.");
+      ui.notifications.warn("SplineSmith Test: select a path first.");
       return;
     }
 
@@ -29,8 +29,8 @@ function installPlayerVisibility() {
     this.updatePanel();
 
     ui.notifications.info(path.hiddenFromPlayers
-      ? "SplineSmith: path hidden from players."
-      : "SplineSmith: path visible to players.");
+      ? "SplineSmith Test: path hidden from players."
+      : "SplineSmith Test: path visible to players.");
   };
 
   function ensureVisibilityButton(instance) {
@@ -48,8 +48,8 @@ function installPlayerVisibility() {
     button.dataset.action = "player-visibility";
     button.addEventListener("click", () => {
       instance.togglePlayerVisibility().catch(err => {
-        console.error("SplineSmith | Failed to change player visibility", err);
-        ui.notifications.error("SplineSmith could not change player visibility. Check F12 console.");
+        console.error("SplineSmith Test | Failed to change player visibility", err);
+        ui.notifications.error("SplineSmith Test could not change player visibility. Check F12 console.");
       });
     });
 
@@ -80,14 +80,14 @@ function installPlayerVisibility() {
       ? '<i class="fa-solid fa-eye"></i> Show to Players'
       : '<i class="fa-solid fa-eye-slash"></i> Hide from Players';
 
-    if (path && game.activeTool === "splinesmith-select") {
+    if (path && game.activeTool === "splinesmith-test-select") {
       const status = this.panel?.querySelector('[data-ss="status"]');
       if (status) status.textContent += hidden ? " Players: HIDDEN." : " Players: visible.";
     }
   };
 
-  console.log(`SplineSmith | Player visibility feature loaded (${SS_VISIBILITY_VERSION}).`);
+  console.log(`SplineSmith Test | Player visibility feature loaded (${SS_VISIBILITY_VERSION}).`);
 }
 
-if (globalThis.SplineSmith?.engine) installPlayerVisibility();
+if (globalThis.SplineSmithTest?.engine) installPlayerVisibility();
 else Hooks.once("init", installPlayerVisibility);
