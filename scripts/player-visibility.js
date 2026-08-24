@@ -1,4 +1,4 @@
-const SS_VISIBILITY_VERSION = "0.1.1-test.1";
+const SS_VISIBILITY_VERSION = "0.1.1-test.2";
 
 function installPlayerVisibility() {
   const engine = globalThis.SplineSmithTest?.engine;
