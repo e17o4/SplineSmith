@@ -1,32 +1,22 @@
 {
   "id": "splinesmith-test",
   "title": "SplineSmith Test",
-  "description": "Pre-release test channel for SplineSmith. Includes isolated test data, player visibility controls, and primary-canvas rendering so paths obey Foundry lighting, token vision, darkness, and fog.",
-  "version": "0.1.1-test.3",
+  "description": "Pre-release test channel for SplineSmith. Includes isolated test data, player visibility controls, and explicit token-vision masking so spline paths do not render through walls, fog, or outside current sight.",
+  "version": "0.1.1-test.4",
   "type": "module",
-  "authors": [
-    {
-      "name": "Beta ki + ChatGPT"
-    }
-  ],
-  "compatibility": {
-    "minimum": "14",
-    "verified": "14.365",
-    "maximum": "14"
-  },
+  "authors": [{"name": "Beta ki + ChatGPT"}],
+  "compatibility": {"minimum": "14", "verified": "14.365", "maximum": "14"},
   "esmodules": [
     "scripts/splinesmith.js",
     "scripts/test-isolation.js",
     "scripts/player-visibility.js",
     "scripts/primary-render-fix.js"
   ],
-  "styles": [
-    "styles/splinesmith.css"
-  ],
+  "styles": ["styles/splinesmith.css"],
   "socket": false,
   "readme": "README.md",
   "license": "LICENSE",
   "url": "https://github.com/e17o4/SplineSmith",
   "manifest": "https://raw.githubusercontent.com/e17o4/SplineSmith/test/module.json",
-  "download": "https://github.com/e17o4/SplineSmith/releases/download/Test_V1.1.3/SplineSmith-Test-v0.1.1-test.3.zip"
+  "download": "https://github.com/e17o4/SplineSmith/releases/download/Test_V1.1.4/SplineSmith-Test-v0.1.1-test.4.zip"
 }
