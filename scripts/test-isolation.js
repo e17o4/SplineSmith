@@ -1,4 +1,4 @@
-const SS_TEST_VERSION = "0.1.1-test.3";
+const SS_TEST_VERSION = "0.1.1-test.4";
 const SS_TEST_MODULE_ID = "splinesmith-test";
 const SS_STABLE_MODULE_ID = "splinesmith";
 const SS_FLAG_KEY = "paths";
