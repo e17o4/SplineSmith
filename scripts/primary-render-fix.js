@@ -1,4 +1,4 @@
-const SS_PRIMARY_RENDER_VERSION = "0.1.1-test.2";
+const SS_PRIMARY_RENDER_VERSION = "0.1.1-test.3";
 
 function installPrimaryRenderFix() {
   const engine = globalThis.SplineSmithTest?.engine;
@@ -13,14 +13,14 @@ function installPrimaryRenderFix() {
   engine.destroyCanvasObjects = function() {
     const meshContainer = this.meshContainer;
 
-    // In test.2 the textured spline mesh lives directly in canvas.primary,
-    // separate from the GM editing overlay which remains on canvas.tiles.
     if (meshContainer?.parent && meshContainer.parent !== this.root) {
       try { meshContainer.parent.removeChild(meshContainer); }
       catch (err) { console.warn("SplineSmith Test | Could not detach primary mesh container", err); }
 
       try { meshContainer.destroy({ children: true }); }
       catch (err) { console.warn("SplineSmith Test | Could not destroy primary mesh container", err); }
+
+      this.meshContainer = null;
     }
 
     originalDestroyCanvasObjects();
@@ -35,15 +35,10 @@ function installPrimaryRenderFix() {
       return;
     }
 
-    // The original V1 implementation places both path artwork and editing
-    // controls on canvas.tiles. That interface layer renders above Foundry's
-    // lighting, token vision, and fog. Move only the textured artwork into
-    // the PrimaryCanvasGroup so normal scene visibility effects apply.
+    // Move only the textured spline artwork into Foundry's primary scene group.
+    // GM editing guides and nodes remain on canvas.tiles above scene effects.
     if (this.meshContainer.parent) this.meshContainer.parent.removeChild(this.meshContainer);
     canvas.primary.addChild(this.meshContainer);
-
-    // Keep the editor overlay on canvas.tiles so a GM can still see and drag
-    // control points while lighting/vision obscures the actual path artwork.
     this.meshContainer.eventMode = "none";
 
     console.log(`SplineSmith Test | Primary-canvas rendering enabled (${SS_PRIMARY_RENDER_VERSION}).`);
