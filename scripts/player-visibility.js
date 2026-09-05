@@ -1,4 +1,4 @@
-const SS_VISIBILITY_VERSION = "0.1.1-test.3";
+const SS_VISIBILITY_VERSION = "0.1.1-test.4";
 
 /**
  * SplineSmith Test player visibility extension.
