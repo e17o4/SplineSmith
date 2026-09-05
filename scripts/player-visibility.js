@@ -1,5 +1,9 @@
-const SS_VISIBILITY_VERSION = "0.1.1-test.2";
+const SS_VISIBILITY_VERSION = "0.1.1-test.3";
 
+/**
+ * SplineSmith Test player visibility extension.
+ * Hidden paths remain visible to the GM but are not rendered by non-GM clients.
+ */
 function installPlayerVisibility() {
   const engine = globalThis.SplineSmithTest?.engine;
   if (!engine) {
@@ -80,13 +84,13 @@ function installPlayerVisibility() {
       ? '<i class="fa-solid fa-eye"></i> Show to Players'
       : '<i class="fa-solid fa-eye-slash"></i> Hide from Players';
 
-    if (path && game.activeTool === "splinesmith-test-select") {
+    if (path) {
       const status = this.panel?.querySelector('[data-ss="status"]');
       if (status) status.textContent += hidden ? " Players: HIDDEN." : " Players: visible.";
     }
   };
 
-  console.log(`SplineSmith Test | Player visibility feature loaded (${SS_VISIBILITY_VERSION}).`);
+  console.log(`SplineSmith Test | Player visibility loaded (${SS_VISIBILITY_VERSION}).`);
 }
 
 if (globalThis.SplineSmithTest?.engine) installPlayerVisibility();
